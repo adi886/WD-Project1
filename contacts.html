@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+            <header>
+                
+                <img src="images/ChatGPT Image Jan 30, 2026, 08_09_00 PM.png" alt="Photo" style="height: 150px; width: 150px; margin: 20px;">
+                
+            </header>
+
+<nav>
+    <ul>
+        <li><a href="index.html">1.Home</a></li>
+        <li><a href="about.html">2.History</a></li>
+        <li><a href="players.html">3.Famous Players</a></li>
+        <li><a href="stadiums.html">4.Stadiums</a></li>
+        <li><a href="moments.html">5.Top Moments</a></li>
+        <li><a href="tactics.html">6.Tactics</a></li>
+        <li><a href="contacts.html">7.Contact</a></li>
+    </ul>
+</nav>
+
+<main>
+    <h2>Get in Touch</h2>
+    <p style="text-align:center;">Have a question or want to reach out? Fill in the form below.</p>
+
+    <div class="contact-container">
+        <form class="contact-form" id="contactForm">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" rows="5" placeholder="Write your message..." required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+
+        <div class="contact-info">
+            <h3>Contact Details</h3>
+            <p><strong>Email:</strong> info@soccerfanatics.com</p>
+            <p><strong>Phone:</strong> +123 456 7890</p>
+            <p><strong>Location:</strong> Dublin, Ireland</p>
+        </div>
+    </div>
+
+    <!-- DISPLAY MESSAGE HERE -->
+    <div id="submittedMessage" class="submitted-box" style="display:none;">
+        <h3>Your Message</h3>
+        <p><strong>Name:</strong> <span id="outName"></span></p>
+        <p><strong>Email:</strong> <span id="outEmail"></span></p>
+        <p><strong>Message:</strong></p>
+        <p id="outMessage"></p>
+    </div>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 Soccer Website. All rights reserved.</p>
+</footer>
+
+<script>
+    const form = document.getElementById("contactForm");
+    const box = document.getElementById("submittedMessage");
+
+    form.addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        document.getElementById("outName").textContent = document.getElementById("name").value;
+        document.getElementById("outEmail").textContent = document.getElementById("email").value;
+        document.getElementById("outMessage").textContent = document.getElementById("message").value;
+
+        box.style.display = "block";
+
+        form.reset();
+    });
+</script>
+
+</body>
+</html>
